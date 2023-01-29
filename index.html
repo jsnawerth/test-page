@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS | Selectors Specificity - Colors - Borders</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navigation">
+            <ul>
+                <li><a href="#howto">How to Add CSS</a></li>
+                <li><a href="#specificity">Specificity</a></li>
+                <li><a href="#colors">CSS Colors</a></li>
+                <li><a href="#borders">CSS Borders</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="howto">
+            <h2 >How to Add CSS</h2>
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Example</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>External</td>
+                    <td><span class="code">
+                        &lt;link rel="stylesheet" href="mystyle.css"&gt;</td>
+                    <td>With an external style sheet, you can change the look of an entire website by changing just one file!
+                        <br>
+                        Each HTML page must include a reference to the external style sheet file inside the &lt;link&gt; element, inside the head section.
+                    </span></td>
+                </tr>
+                <tr>
+                    <td>Internal</td>
+                    <td><pre class="code">
+&lt;style&gt;
+    body {
+        background-color: linen;
+    }
+                            
+    h1 {
+        color: maroon;
+        margin-left: 40px;
+    }
+&lt;/style&gt;
+                    </pre>
+                </td>
+                    <td>An internal style sheet may be used if one single HTML page has a unique style.
+                        <br>
+                        The internal style is defined inside the &lt;style&gt; element, inside the head section.</td>
+                </tr>
+                <tr>
+                    <td>Inline</td>
+                    <td>
+<pre class="code">
+&lt;h1 style="color:blue;text-align:center;"&gt;
+This is a heading
+&lt;/h1&gt;
+&lt;p style="color:red;"&gt;
+This is a paragraph.
+&lt;/p&gt;
+</pre>
+                    </td>
+                    <td>An inline style may be used to apply a unique style for a single element.
+                        <br>
+                        To use inline styles, add the style attribute to the relevant element. The style attribute can contain any CSS property.
+                    </td>
+                </tr>
+            </table>
+        </section>
+        <section id="specificity">
+            <h2>Specificity</h2>
+        <table>
+            <tr>
+                <th>Selector</th>
+                <th>Example</th>
+                <th>Name</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>#id</td>
+                <td><span class="code">#firstname{}</span></td>
+                <td>ID selector</td>
+                <td>Selects the element with id="firstname"
+                    <br><br>ID selector can be used one single time.
+                </td>
+            </tr>
+            <tr>
+                <td>element.class</td>
+                <td><span class="code">p.intro{}</span></td>
+                <td>Element selector</td>
+                <td>Selects only &lt;p&gt; elements with class="intro"</td>
+            </tr>
+            <tr>
+                <td>.class</td>
+                <td><span class="code">.intro{}</span></td>
+                <td>Class selector</td>
+                <td>Selects all elements with class="intro"
+                   <br> <br>Class selector can be used multiple times.
+                </td>
+            </tr>
+            <tr>
+                <td>element,element,...</td>
+                <td><span class="code">div, p{}</span></td>
+                <td>Element selector</td>
+                <td>Selects all &lt;div&gt; elements and all &lt;p&gt; elements</td>
+            </tr>
+            <tr>
+                <td>element</td>
+                <td><span class="code">p{}</span></td>
+                <td>Element selector</td>
+                <td>Selects all &lt;p&gt; elements</td>
+            </tr>
+            <tr>
+                <td>*</td>
+                <td><span class="code">*{}</span></td>
+                <td>The CSS Universal selector</td>
+                <td>Selects all HTML elements on the page.</td>
+            </tr>
+        </table>
+    </section>
+
+    <section id="colors">
+        <h2>CSS Colors</h2>
+        <p>Colors are specified using predefined color names, or RGB, HEX, HSL, RGBA, HSLA values.</p>
+    <table>
+        <tr><th>Name</th>
+            <th>Example</th>
+            
+            <th>Description</th>
+        </tr>
+        <tr><td>CSS Background Color</td>
+            <td><span class="code">background-color:DodgerBlue;</span></td>
+            
+            <td>You can set the background color for HTML elements.
+            </td>
+        </tr>
+        <tr><td>CSS Text Color</td>
+            <td><span class="code">color:Tomato;</span></td>
+            
+            <td>You can set the color of text</td>
+        </tr>
+        <tr><td>CSS Border Color </td>
+            <td><span class="code">border:2px solid Violet;</span></td>
+            
+            <td>You can set the color of borders.
+            </td>
+        </tr>
+        <tr><td>CSS Color Values
+            <br>RGB
+            <br>HEX
+            <br>HSL
+        </td>
+            <td>
+<pre class="code">color: rgb(255, 99, 71);
+color: #ff6347;
+color: hsl(9, 100%, 64%);</pre>
+            </td>
+            
+            <td>In CSS, colors can also be specified using RGB values, HEX values, HSL values.
+                <br>
+                Same as color name "Tomato"</td>
+        </tr>
+        <tr>
+            <td>CSS Color Values with transparency
+                <br>RGBA
+                <br>HSLA</td>
+            <td>
+<pre class="code">color: rgba(255, 99, 71, 0.5)
+color: hsla(9, 100%, 64%, 0.5)</pre></td>
+            
+            <td>
+                In CSS, colors can also be specified using RGBA values, and HSLA values:
+                <br>
+                Same as color name "Tomato", but 50% transparent.
+            </td>
+        </tr>
+    </table>
+</section>
+<section id="borders">
+    <h2>CSS Border Style</h2>
+    <p>The border-style property specifies what kind of border to display.</p>
+<table>
+    <tr><th>Name</th>
+        <th>Example</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>dotted</td>
+        <td><pre class="code">p.dotted {border-style: dotted;}</pre></td>
+        <td><p style="border: 5px dotted lightskyblue; padding: 5px;">Defines a dotted border</p></td>
+    </tr>
+    <tr>
+        <td>dashed</td>
+        <td><pre class="code">p.dashed {border-style: dashed;}</pre></td>
+        <td><p style="border: 5px dashed lightskyblue; padding: 5px;">Defines a dashed border</p></td>
+    </tr>
+    <tr>
+        <td>solid</td>
+        <td><pre class="code">p.solid {border-style: solid;}</pre></td>
+        <td><p style="border: 5px solid lightskyblue; padding: 5px;">Defines a solid border</p></td>
+    </tr>
+    <tr><td>double</td>
+        <td><pre class="code">p.double {border-style: double;}</pre></td>
+        <td><p style="border: 5px double lightskyblue; padding: 5px;">Defines a double border</p></td>
+    </tr>
+    <tr>
+        <td>groove</td>
+        <td><pre class="code">p.groove {border-style: groove;}</pre></td>
+        <td><p style="border: 5px groove lightskyblue; padding: 5px;">Defines a 3D grooved border. The effect depends on the border-color value</p></td>
+    </tr>
+    <tr>
+        <td>ridge</td>
+        <td><pre class="code">p.ridge {border-style: ridge;}</pre></td>
+        <td><p style="border: 5px ridge lightskyblue; padding: 5px;">Defines a 3D ridged border. The effect depends on the border-color value</p></td>
+    </tr>
+    <tr>
+        <td>inset</td>
+        <td><pre class="code">p.inset {border-style: inset;}</pre></td>
+        <td><p style="border: 5px inset lightskyblue; padding: 5px;">Defines a 3D inset border. The effect depends on the border-color value</p></td>
+    </tr>
+    <tr>
+        <td>outset</td>
+        <td><pre class="code">p.outset {border-style: outset;}</pre></td>
+        <td><p style="border: 5px outset lightskyblue; padding: 5px;">Defines a 3D outset border. The effect depends on the border-color value</p></td>
+    </tr>
+    <tr>
+        <td>none</td>
+        <td><pre class="code">p.none {border-style: none;}</pre></td>
+        <td><p>Defines no border</p></td>
+    </tr>
+    <tr>
+        <td>hidden</td>
+        <td><pre class="code">p.hidden {border-style: hidden;}</pre></td>
+        <td><p  style="border: 5px hidden lightskyblue;">Defines a hidden border</p></td>
+    </tr>
+</table>
+</section>
+    </main>
+    <footer>
+        <p>Copyright &copy; Jerry Nawerth</p>
+    </footer>
+</body>
+</html>
